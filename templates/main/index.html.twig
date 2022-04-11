@@ -1,21 +1,114 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
 
-{% block title %}Hello MainController!{% endblock %}
+    <title>Mon BLOG - {% block title %}{% endblock %}</title>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    {# BLOCK CSS #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-<div class="example-wrapper" >
-    <h1>Hello {{ controller_name }}! ✅</h1 class="fa-brands fa-playstation px-2">
-    <a class="navbar-brand ms-2 me-4" >Blog<i class="fa-brands fa-playstation px-2"></i>Sf6</a>
+    {# BLOCK JS #}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/projet/sondage/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/projet/sondage/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    {# HEADER #}
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+
+          <a class="navbar-brand ms-2 me-4" href="">Blog<i class="fa-solid fa-blog px-2"></i>Sf6</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            {# Menu de Gauche #}
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href=""><i class="fa-solid fa-lg fa-newspaper pe-2"></i>Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""><i class="fa-solid fa-lg fa-envelope pe-2"></i>Contact</a>
+              </li>
+              
+            </ul>
+
+            {# Menu de Droite #}
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+
+                
+                  <li class="nav-item dropdown">
+                      <a  class="nav-link dropdown-toggle text-capitalize" 
+                          href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-lg fa-user pe-2"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+                      {# Menu de l'interface d'administration #}
+                        
+                        <li><a class="dropdown-item mb-2" href=""><i class="fa-solid fa-users pe-3"></i>Administration</a></li>
+                        <li><hr class="dropdown-divider"></li>  
+                                           
+                        <li><a class="dropdown-item mb-2" href="#"><i class="fa-solid fa-lg fa-house pe-3"></i>Mon profil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href=""><i class="fas fa-lg fa-sign-out-alt pe-3"></i>Me déconnecter</a></li>
+                      </ul>
+                  </li>
+               
+                  <a class="nav-link" href=""><i class="fas fa-lg fa-sign-in-alt pe-2"></i>Connexion</a>
+                
+
+              </li>
+            </ul>            
+
+            {# Formulaire de recherche #}
+            <form class="d-flex" method="GET" action="">
+              <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
+              <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+            </form> 
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {# MAIN #}
+    <main class="container-fluid flex-shrink-0">
+        
+      {# Container pour les messages flash #}
+      <div id="messages" class="container-md p-0 m-0 mx-auto">
+        <div class="row p-0 m-0">
+          
+            
+               <div></div>
+            
+        
+        </div>
+      </div>
+
+      {# BLOCK PRINCIPAL #}
+      
+
+    </main>        
+
+    {# FOOTER #}
+    <footer class="footer mt-auto py-2 bg-dark">
+      <div class="container">
+        <span class="text-muted">Ceci est le footer</span>
+      </div>
+    </footer>
+
+</body>
+
+</html>
