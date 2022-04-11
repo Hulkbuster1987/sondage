@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SondagesController extends AbstractController
+class SurveysController extends AbstractController
 {
-    #[Route('/sondages', name: 'app_sondages')]
+    #[Route('/surveys', name: 'app_surveys')]
     public function index(): Response
     {
-        return $this->render('sondages/index.html.twig', [
-            'controller_name' => 'SondagesController',
+        return $this->render('surveys/index.html.twig', [
+            'controller_name' => 'SurveysController',
         ]);
     }
 }
