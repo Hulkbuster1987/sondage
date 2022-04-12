@@ -1,0 +1,32 @@
+/* IMPORTS */
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../../node_modules/bootswatch/dist/superhero/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootswatch/dist/superhero/bootswatch";
+
+body{
+    background-color: azure;
+}
+.button{
+    color
+}
+/* VARIABLES SCSS */
+
+// Color system
+$gray-800: #303030 !default;
+
+$red:     #e74c3c !default;
+$orange:  #fd7e14 !default;
+$yellow:  #f39c12 !default;
+
+$dark: #2c4866 !default;
+
+$body-bg: #0e1e2e !default;
+
+$navbar-dark-color:       rgba(#fff, .90) !default;
+$navbar-dark-hover-color: #ffb !default;
+
+// Components
+$border-radius:    5px !default;
+$border-radius-lg: 5px !default;
+$border-radius-sm: 3px !default;
