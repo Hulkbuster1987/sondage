@@ -1,3 +1,9 @@
-body {
-    background-color: lightgray;
+/* IMPORTS */
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../../node_modules/bootswatch/dist/superhero/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootswatch/dist/superhero/bootswatch";
+
+body{
+    background-color: lightgrey;
 }
