@@ -2,7 +2,7 @@
 <html class="h-100">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Mon BLOG - {% block title %}{% endblock %}</title>
 
@@ -41,19 +41,19 @@
               <li class="nav-item">
                 <a class="nav-link" href=""><i class="fa-solid fa-lg fa-envelope pe-2"></i>Contact</a>
               </li>
-              {% if is_granted('ROLE_BLOGGER') %}                   
+              {% if is_granted('ROLE_BLOGGER') %}
                 <li class="nav-item">
                   <a class="nav-link" href=""><i class="fa-solid fa-lg fa-file-circle-plus pe-2"></i>Nouvelle publication</a>
-                </li>              
+                </li>
               {% endif %}
             </ul>
 
-           
+
             {# Formulaire de recherche #}
             <form class="d-flex" method="GET" action="">
               <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
               <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
-            </form> 
+            </form>
 
           </div>
         </div>
@@ -62,7 +62,7 @@
 
     {# MAIN #}
     <main class="container-fluid flex-shrink-0">
-        
+
       {# Container pour les messages flash #}
       <div id="messages" class="container-md p-0 m-0 mx-auto">
         <div class="row p-0 m-0">
@@ -77,7 +77,7 @@
       {# BLOCK PRINCIPAL #}
       {% block body %}{% endblock %}
 
-    </main>        
+    </main>
 
     {# FOOTER #}
     <footer class="footer mt-auto py-2 bg-dark">
