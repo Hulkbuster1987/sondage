@@ -13,7 +13,7 @@ class SurveysController extends AbstractController
     public function index(): Response
     {
         $newSurveys = new Surveys();
-        $form = $this->createForm(CreateSurveysFormType::class);
+        $form = $this->createForm(SurveysType::class);
         return $this->render('templates/surveys/index.html.twig', [
             'controller_name' => 'SurveysController',
         ]);
