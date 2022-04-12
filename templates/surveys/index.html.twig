@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Creation de Sondage{% endblock %}
-{{ form_start(formSurveysType) }}
 
-    {{ form_widget(formSurveysType) }}
+{% block body %}
+{{ form_start(form) }}
+
+    {{ form_widget(form) }}
 
     <button class="btn btn-outline-info w-100 my-4">{{ button_label|default('save') }}</button>
     
-{{ form_end(formSurveysType) }}
+{{ form_end(form) }}
 
-{% block body %}
+
 
 {% endblock %}

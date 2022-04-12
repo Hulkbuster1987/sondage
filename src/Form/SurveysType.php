@@ -15,11 +15,11 @@ class SurveysType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => "ce champs ne peut pas etre vide *",
+                'label' => "Titre Du Sondage",
                 'help' => 'ce champs doit contenir entre 5 et 100 caracteres maximum'
             ])
             ->add('creationDate')
-            ->add('creationUsername');
+            ->add('UserName');
         
     }
 

@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 use App\Form\SurveysType;
+use App\Entity\Surveys;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 
 class SurveysController extends AbstractController
@@ -14,8 +16,8 @@ class SurveysController extends AbstractController
     {
         $newSurveys = new Surveys();
         $form = $this->createForm(SurveysType::class);
-        return $this->render('templates/surveys/index.html.twig', [
-            'controller_name' => 'SurveysController',
+        return $this->renderForm('surveys/index.html.twig', [
+            'form' => $form,
         ]);
     }
 }
