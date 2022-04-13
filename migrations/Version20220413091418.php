@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220411100753 extends AbstractMigration
+final class Version20220413091418 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -24,6 +24,7 @@ final class Version20220411100753 extends AbstractMigration
         $this->addSql('CREATE TABLE questions (id INT AUTO_INCREMENT NOT NULL, survey_id INT NOT NULL, label VARCHAR(255) NOT NULL, question_order INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE statistics (id INT AUTO_INCREMENT NOT NULL, survey_id INT NOT NULL, survey_views INT NOT NULL, answer_count INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE surveys (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(100) NOT NULL, creation_date DATE NOT NULL, creation_username VARCHAR(100) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
     }
 
     public function down(Schema $schema): void
@@ -33,5 +34,6 @@ final class Version20220411100753 extends AbstractMigration
         $this->addSql('DROP TABLE questions');
         $this->addSql('DROP TABLE statistics');
         $this->addSql('DROP TABLE surveys');
+        $this->addSql('DROP TABLE user');
     }
 }

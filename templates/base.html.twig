@@ -2,9 +2,9 @@
 <html class="h-100">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mon BLOG - {% block title %}{% endblock %}</title>
+    <title>SONDAGES- {% block title %}{% endblock %}</title>
 
     {# BLOCK CSS #}
     {% block stylesheets %}
@@ -17,73 +17,64 @@
     {% endblock %}
 
 </head>
-
 <body class="d-flex flex-column h-100">
 
     {# HEADER #}
-    <header>
+  {#  <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
 
-          <a class="navbar-brand ms-2 me-4" href="">Blog<i class="fa-solid fa-blog px-2"></i>Sf6</a>
+          <a class="navbar-brand ms-2 me-4" href="">SONDAGES<i class="fas fa-poll px-2"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+<div class="collapse navbar-collapse" id="navbarCollapse"> #}
 
             {# Menu de Gauche #}
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href=""><i class="fa-solid fa-lg fa-newspaper pe-2"></i>Blog</a>
+                <a class="nav-link" href=""><i class="fa-solid fa-chart-line pe-2"></i>Statistics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href=""><i class="fa-solid fa-lg fa-envelope pe-2"></i>Contact</a>
+                <a class="nav-link" href=""><i class="fa-solid fa-lg fa-envelope pe-2"></i>creer un questionnaire</a>
               </li>
-              {% if is_granted('ROLE_BLOGGER') %}                   
-                <li class="nav-item">
-                  <a class="nav-link" href=""><i class="fa-solid fa-lg fa-file-circle-plus pe-2"></i>Nouvelle publication</a>
-                </li>              
-              {% endif %}
+              
             </ul>
-
-           
-            {# Formulaire de recherche #}
-            <form class="d-flex" method="GET" action="">
-              <input class="form-control me-2" name="search" type="search" placeholder="Trouver une publication" aria-label="Search">
-              <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
-            </form> 
-
           </div>
         </div>
       </nav>
     </header>
-
-    {# MAIN #}
+{# MAIN #}
     <main class="container-fluid flex-shrink-0">
         
       {# Container pour les messages flash #}
       <div id="messages" class="container-md p-0 m-0 mx-auto">
         <div class="row p-0 m-0">
-          {% for label, messages in app.flashes %}
-            {% for message in messages %}
-               <div class="alert alert-{{ label }} col-12" role="alert">{{ message }}</div>
-            {% endfor %}
-          {% endfor %}
+          
+            
+               <div></div>
+            
+        
         </div>
       </div>
 
-      {# BLOCK PRINCIPAL #}
+        {# BLOCK PRINCIPAL #}
       {% block body %}{% endblock %}
-
-    </main>        
+</main>        
 
     {# FOOTER #}
-    <footer class="footer mt-auto py-2 bg-dark">
+    <footer class="footer mt-auto py-2 bg-dark" name="image">
       <div class="container">
-        <span class="text-muted">Ceci est le footer</span>
+        <div class="text-center">
+          <div class="me-auto mb-2">
+            {# <div class="lavalite-bg" style="background-image:url('{{asset('image/'~'wf3.png')}}')"></div> #}
+            <p class="text-danger">&copy; site de Sondage créé le 15/04/2022 avec la participation de Philippe, Teddy, Lucas et Jean-marc</p>
+          </div>
+        </div>
       </div>
     </footer>
 
+
 </body>
+
+</html>
