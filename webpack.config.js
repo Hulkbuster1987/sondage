@@ -1,4 +1,6 @@
 const Encore = require('@symfony/webpack-encore');
+const { Tooltip } = require('chart.js');
+const { toStringTag } = require('core-js/fn/symbol');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -21,7 +23,8 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-
+    .addEntry('surveys', './assets/js/surveys.js')
+    .addEntry('statistics', './assets/js/statistics.js')
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     //.enableStimulusBridge('./assets/controllers.json')
 
